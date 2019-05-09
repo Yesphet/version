@@ -23,6 +23,14 @@ func (v *Complex) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.String())
 }
 
+func newComplex() Version {
+	return &Complex{
+		major: 0,
+		minor: 0,
+		patch: 0,
+	}
+}
+
 func newComplexFromString(s string) (Version, error) {
 	var major, minor, patch int64
 	var err error
